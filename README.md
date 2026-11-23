@@ -33,3 +33,30 @@ Story jest Done dopiero wtedy, gdy spełnia kryteria akceptacji, działa w aplik
 - Scrum Master - Seweryn Satro
 
 - Developer - Szymon Ptasznik
+
+### Running locally
+
+Requirements: Python 3.12+ and Git.
+
+```bash
+git clone https://github.com/KrystianRucki/RentOven.git
+cd RentOven
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# Linux / macOS
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+The app is available at http://127.0.0.1:8000/. The database is a local SQLite file (`db.sqlite3`, not committed).
+
+Run tests:
+
+```bash
+python manage.py test
+```
+
+Optional environment variables: `DJANGO_SECRET_KEY`, `DJANGO_DEBUG` (`1`/`0`), `DJANGO_ALLOWED_HOSTS` (comma separated).
